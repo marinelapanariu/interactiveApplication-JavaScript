@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 6</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 6</div>
+    <a href="index.html">Back</a>
+    <script>
+      const subtotal = (
+        product1,
+        quantity1,
+        product2,
+        quantity2,
+        product3,
+        quantity3
+      ) => {
+        return (
+          product1 * quantity1 + product2 * quantity2 + product3 * quantity3
+        );
+      };
+
+      const calculateTax = (sub) => {
+        return (5.5 / 100) * sub;
+      };
+
+      const total = (sub, tax) => {
+        return sub + tax;
+      };
+
+      let product1 = parseFloat(prompt("Enter the price of item 1:", ""), 10);
+      let quantity1 = parseFloat(
+        prompt("Enter the quantity of item 1:", ""),
+        10
+      );
+      let product2 = parseFloat(prompt("Enter the price of item 2:", ""), 10);
+      let quantity2 = parseFloat(
+        prompt("Enter the quantity of item 2:", ""),
+        10
+      );
+      let product3 = parseFloat(prompt("Enter the price of item 3:", ""), 10);
+      let quantity3 = parseFloat(
+        prompt("Enter the quantity of item 3:", ""),
+        10
+      );
+      let sub = subtotal(
+        product1,
+        quantity1,
+        product2,
+        quantity2,
+        product3,
+        quantity3
+      );
+      let tax = parseFloat(calculateTax(sub));
+      let tot = total(sub, tax);
+      alert(`Subtotal: $${sub}
+        \nTax: $${tax}
+        \nTotal:$${tot}
+        `);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 12</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 12</div>
+    <a href="index.html">Back</a>
+    <script>
+      const tempC = (fahrenheit) => {
+        return ((fahrenheit - 32) * 5) / 9;
+      };
+
+      const tempF = (celsius) => {
+        return (celsius * 9) / 5 + 32;
+      };
+
+      const convert = (temp) => {
+        if (temp.toString().toLowerCase() === "c") {
+          let fahrenheit = prompt(
+            `Please enter the temperature in Fahrenheit:`
+          );
+          alert(` The temperature in Celsius is ${tempC(fahrenheit)}.`);
+        } else if (temp.toString().toLowerCase() === "f") {
+          let celsius = prompt(`Please enter the temperature in Celsius:`);
+          alert(` The temperature in Fahrenheit is ${tempF(celsius)}.`);
+        }
+      };
+      let temperature = prompt(
+        "Press C to convert from Fahrenheit to Celsius \n Press F to convert from Celsius to Fahrenheit.",
+        ""
+      );
+      let conv = convert(temperature);
+    </script>
+  </body>
+</html>

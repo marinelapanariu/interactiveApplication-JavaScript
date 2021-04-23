@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 8</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 8</div>
+    <a href="index.html">Back</a>
+    <script>
+      const amountAccrue = (principalAmount, annualRate, numberOfYears) => {
+        return principalAmount * (1 + (annualRate / 100) * numberOfYears);
+      };
+      let principal = parseFloat(prompt("Enter the principal:", ""), 10);
+      let rate = parseFloat(prompt("Enter the rate of interest:", ""), 10);
+      let years = parseFloat(prompt("Enter the number of years: ", ""), 10);
+
+      let amountaccrue = amountAccrue(principal, rate, years);
+      alert(`
+        After ${years} years at ${rate}%, the investment
+        will be worth $${amountaccrue}.
+        `);
+    </script>
+  </body>
+</html>

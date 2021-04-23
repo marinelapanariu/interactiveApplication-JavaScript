@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 2</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 2</div>
+    <a href="index.html">Back</a>
+    <script>
+      const differenceAge = (currentAge, lRetire) => {
+        if (typeof currentAge === "number" && typeof lRetire === "number") {
+          return lRetire - currentAge;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      const retire = (difference, currentYear) => {
+        if (typeof difference === "number" && typeof currentYear === "number") {
+          return difference + currentYear;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      let currentAge = parseFloat(prompt("What is your current age?", ""), 10);
+      let lRetire = parseFloat(
+        prompt("At what age would you like to retire?", ""),
+        10
+      );
+      let difference = differenceAge(currentAge, lRetire);
+      let d = new Date();
+      let currentYear = d.getFullYear();
+      let retireYear = retire(difference, currentYear);
+      // let fullDate = new Date();
+      // fullDate.setFullYear(retireYear);
+      alert(`You have ${difference} years left until you can retire.
+        \nIt's ${currentYear}, so you can retire in ${retireYear}.`);
+    </script>
+  </body>
+</html>

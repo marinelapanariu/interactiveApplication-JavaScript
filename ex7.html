@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 7</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 7</div>
+    <a href="index.html">Back</a>
+    <script>
+      const amountTo = (amountF, rateF, rateT) => {
+        return (amountF * rateF) / rateT;
+      };
+
+      let amountFrom = parseFloat(
+        prompt("How many euros are you exchanging?", ""),
+        10
+      );
+      let rateFrom = parseFloat(
+        prompt("What is the current exchange rate in euros?", ""),
+        10
+      );
+      let rateTo = 100;
+      let amount = amountTo(amountFrom, rateFrom, rateTo);
+      alert(
+        `${amountFrom} euros at an exchange rate of ${rateFrom} is ${amount} U.S. dollars.`
+      );
+    </script>
+  </body>
+</html>

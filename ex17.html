@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 17</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 17</div>
+    <a href="index.html">Back</a>
+    <script>
+      const questions = [
+        {
+          // 0
+          question: "Is the car silent when you turn the key?",
+          answers: {
+            Y: 1,
+            N: 2,
+          },
+        },
+        {
+          // 1
+          question: "Are the battery terminals corroded?",
+          answers: {
+            Y: 3,
+            N: 4,
+          },
+        },
+        {
+          // 2
+          question: "Does the car make a clicking noise?",
+          answers: {
+            Y: 5,
+            N: 6,
+          },
+        },
+        {
+          // 3
+          question: "Clean terminals and try starting again.",
+          answers: {},
+        },
+        {
+          // 4
+          question: "Replace cabes and try again",
+          answers: {},
+        },
+        {
+          // 5
+          question: "Replace the battery",
+          answers: {},
+        },
+        {
+          // 6
+          question: "Does the car crank up but fails to start?",
+          answers: {
+            Y: 7,
+            N: 8,
+          },
+        },
+        {
+          // 7
+          question: "Check the spark plug connections.",
+          answers: {},
+        },
+        {
+          // 8
+          question: "Does the engine starts and then die?",
+          answers: {
+            Y: 9,
+            N: 10,
+          },
+        },
+        {
+          // 9
+          question: "Does your car have fuel injection?",
+          answers: {
+            Y: 10,
+            N: 11,
+          },
+        },
+        {
+          // 10
+          question: "Get it into service",
+          answers: {},
+        },
+        {
+          // 11
+          question: "Check to ensure the choke is opening and closing.",
+          answers: {},
+        },
+      ];
+
+      let finish = false;
+      const questionPromises = [];
+      const executeQuestion = (index) => {
+        const q = questions[index];
+        if (!q) {
+          finish = true;
+          return;
+        }
+
+        questionPromises.push(
+          new Promise((done) => {
+            const hasAnswers = Object.keys(q.answers).length > 0;
+            if (!hasAnswers) {
+              alert(q.question);
+              finish = true;
+              done();
+              return;
+            }
+
+            let next = -1;
+            const answer = prompt(
+              `${q.question} ${Object.keys(q.answers).join("/")}`.trim()
+            );
+
+            switch (answer.toLowerCase().trim()) {
+              case "yes": {
+                next = q.answers.Y;
+                break;
+              }
+              case "y": {
+                next = q.answers.Y;
+                break;
+              }
+              case "no": {
+                next = q.answers.N;
+                break;
+              }
+              case "n": {
+                next = q.answers.N;
+                break;
+              }
+              default:
+                break;
+            }
+
+            executeQuestion(next);
+            done();
+          })
+        );
+      };
+
+      executeQuestion(0);
+      do {
+        await Promise.all(questionPromises);
+      } while (!finish);
+    </script>
+  </body>
+</html>

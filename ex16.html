@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 16</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 16</div>
+    <a href="index.html">Back</a>
+    <script>
+      const theLargestNumber = (fNumber, sNumber, tNumber) => {
+        if (fNumber !== sNumber && sNumber !== tNumber && fNumber !== tNumber) {
+          return Math.max(fNumber, sNumber, tNumber);
+        } else return;
+      };
+      let firstNumber = parseFloat(prompt("Enter the first number:", ""), 10);
+      let secondNumber = parseFloat(prompt("Enter the second number:", ""), 10);
+      let thirdNumber = parseFloat(prompt("Enter the third number: ", ""), 10);
+
+      let lNumber = theLargestNumber(firstNumber, secondNumber, thirdNumber);
+      alert(` The largest number is ${lNumber}. `);
+    </script>
+  </body>
+</html>

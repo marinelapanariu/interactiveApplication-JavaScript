@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 20</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 20</div>
+    <a href="index.html">Back</a>
+    <div id="list"></div>
+    <script>
+      const lines = 8;
+      const cols = 4;
+
+      const list = document.getElementById("list");
+
+      for (let i = 1; i <= lines; i++) {
+        const line = document.createElement("div");
+
+        for (let x = 1; x <= cols; x++) {
+          line.append(document.createTextNode("*"));
+        }
+
+        list.append(line);
+      }
+    </script>
+  </body>
+</html>

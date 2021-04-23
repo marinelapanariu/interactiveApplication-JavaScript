@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 14</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 14</div>
+    <a href="index.html">Back</a>
+    <script>
+      const taxCalculator = (orderA, decision, sub) => {
+        let total = 0;
+        let tax = 0;
+        if (decision === "Wisconsin") {
+          tax += 0.5;
+          if (sub === "Eau Claire") {
+            tax += 0.005;
+          } else if (sub === "Dunn") {
+            tax += 0.004;
+          }
+
+          total = orderA + tax;
+        } else if (decision === "Illinois") {
+          tax = orderA * 0.08;
+          total = orderA + tax;
+        }
+
+        return [total, tax];
+      };
+      let orderamount = parseFloat(prompt("What is the order amount?", ""), 10);
+      const state = prompt("What state do you live in?", "");
+      let country = "";
+      if (state === "Wisconsin") {
+        country = prompt("What country do you live in?", "");
+      }
+
+      let totalAndTax = taxCalculator(orderamount, state, country ?? "");
+      alert(
+        `The tax is $${totalAndTax[1].toFixed(
+          2
+        )}\nThe total is $${totalAndTax[0].toFixed(2)}`
+      );
+    </script>
+  </body>
+</html>

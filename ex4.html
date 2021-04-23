@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 4</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 4</div>
+    <a href="index.html">Back</a>
+    <script>
+      const slicesPerPizza = 8;
+
+      const personPieces = (slicesPerPizza, pizzas, people) => {
+        if (
+          typeof slicesPerPizza === "number" &&
+          typeof pizzas === "number" &&
+          typeof people === "number"
+        ) {
+          return parseInt((slicesPerPizza * pizzas) / people);
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      const leftoverPieces = (slicesPerPizza, pizzas, personPieces) => {
+        if (
+          typeof slicesPerPizza === "number" &&
+          typeof pizzas === "number" &&
+          typeof personPieces === "number"
+        ) {
+          return (slicesPerPizza * pizzas) % personPieces;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      let people = parseFloat(prompt("How many people?", ""), 10);
+      let pizza = parseFloat(prompt("How many pizzas do you have? ", ""), 10);
+      let slices = personPieces(slicesPerPizza, pizza, people);
+      let leftoverpieces = leftoverPieces(slicesPerPizza, pizza, slices);
+      alert(` ${people} people with ${pizza} pizzas.
+        \n Each person gets ${slices} pieces of pizza.
+        \n There are ${leftoverpieces} leftover pieces.`);
+    </script>
+  </body>
+</html>

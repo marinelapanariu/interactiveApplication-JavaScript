@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 5</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="ex1">EX 5</div>
+    <a href="index.html">Back</a>
+    <script>
+      const gallon = 350;
+
+      const squareFeet = (l, w) => {
+        if (typeof l === "number" && typeof w === "number") {
+          return l * w;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      let length = parseFloat(
+        prompt("What is the length of the room in feet?", ""),
+        10
+      );
+      let width = parseFloat(
+        prompt("What is the width of the room in feet?", ""),
+        10
+      );
+      let squareF = squareFeet(length, width);
+      let noOfCans = Math.ceil(squareF / gallon);
+      console.log(noOfCans);
+      alert(
+        `You will need to purchase ${noOfCans} gallons of paint to cover ${squareF} square feet.`
+      );
+    </script>
+  </body>
+</html>

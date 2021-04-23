@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 18</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 18</div>
+    <a href="index.html">Back</a>
+    <script>
+      const GuessTheNumber = () => {
+        let difficultyLevel = parseInt(
+          prompt(
+            "Let's play Guess the Number.\nPick a difficulty level (1, 2, or 3):",
+            ""
+          ),
+          10
+        );
+        switch (difficultyLevel) {
+          case 1: {
+            let randomNumber = Math.floor(Math.random() * 11);
+            let yourNumber = parseInt(
+              prompt("I have my number. What's your guess?", ""),
+              10
+            );
+            if (yourNumber === "") {
+              return;
+            }
+            let count = 0;
+            while (randomNumber !== yourNumber) {
+              if (yourNumber === "") {
+                break;
+              }
+              count++;
+              if (randomNumber < yourNumber) {
+                yourNumber = parseInt(prompt("Too high. Guess again:", ""), 10);
+              } else if (randomNumber > yourNumber) {
+                yourNumber = parseInt(prompt("Too low. Guess again:", ""), 10);
+              }
+            }
+            alert(`You got it in ${count} guesses!`);
+            break;
+          }
+          case 2: {
+            let randomNumber = Math.floor(Math.random() * 101);
+            let yourNumber = parseInt(
+              prompt("I have my number. What's your guess?", ""),
+              10
+            );
+            if (yourNumber === "") {
+              return;
+            }
+            let count = 0;
+            while (randomNumber !== yourNumber) {
+              if (yourNumber === "") {
+                break;
+              }
+              count++;
+              if (randomNumber < yourNumber) {
+                yourNumber = parseInt(prompt("Too high. Guess again:", ""), 10);
+              } else if (randomNumber > yourNumber) {
+                yourNumber = parseInt(prompt("Too low. Guess again:", ""), 10);
+              }
+            }
+            alert(`You got it in ${count} guesses!`);
+            break;
+          }
+          case 3: {
+            let randomNumber = Math.floor(Math.random() * 1001);
+            let yourNumber = parseInt(
+              prompt("I have my number. What's your guess?", ""),
+              10
+            );
+            if (yourNumber === "") {
+              return;
+            }
+            let count = 0;
+            while (randomNumber !== yourNumber) {
+              if (yourNumber === "") {
+                break;
+              }
+              count++;
+              if (randomNumber < yourNumber) {
+                yourNumber = parseInt(prompt("Too high. Guess again:", ""), 10);
+              } else if (randomNumber > yourNumber) {
+                yourNumber = parseInt(prompt("Too low. Guess again:", ""), 10);
+              }
+            }
+            alert(`You got it in ${count} guesses!`);
+            break;
+          }
+        }
+      };
+      let n = GuessTheNumber();
+    </script>
+  </body>
+</html>

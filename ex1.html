@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 1</div>
+    <a href="index.html">Back</a>
+    <script>
+      const sum = (a, b) => {
+        if (typeof a === "number" && typeof b === "number") {
+          return a + b;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      const difference = (c, d) => {
+        if (typeof c === "number" && typeof d === "number") {
+          return c - d;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      const product = (e, f) => {
+        if (typeof e === "number" && typeof f === "number") {
+          return e * f;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      const quotient = (g, h) => {
+        if (typeof g === "number" && typeof h === "number") {
+          return g / h;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      window.onload = function () {
+        let val1 = parseFloat(prompt("Insert first number", ""), 10);
+        let val2 = parseFloat(prompt("Insert second number", ""), 10);
+        let addition = sum(val1, val2);
+        let subtraction = difference(val1, val2);
+        let multiplication = product(val1, val2);
+        let division = quotient(val1, val2);
+        alert(
+          `Sum: ${addition}
+          \nDifference: ${subtraction}
+          \nProduct: ${multiplication}
+          \nQuotient: ${division}`
+        );
+      };
+    </script>
+  </body>
+</html>

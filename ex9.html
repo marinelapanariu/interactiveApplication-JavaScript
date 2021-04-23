@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 9</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 9</div>
+    <a href="index.html">Back</a>
+    <script>
+      const investment = (
+        principalAmount,
+        annualRate,
+        numberOfYears,
+        interest
+      ) => {
+        return (
+          principalAmount *
+          Math.pow(1 + annualRate / 100 / interest, interest * numberOfYears)
+        );
+      };
+      let principal = parseFloat(
+        prompt("What is the principal amount?", ""),
+        10
+      );
+      let rate = parseFloat(prompt("What is the rate?", ""), 10);
+      let years = parseFloat(prompt("What is the number of years?", ""), 10);
+      let interestPerYear = parseFloat(
+        prompt(
+          "What is the number of times the interest is compounded per year? ",
+          ""
+        ),
+        10
+      );
+
+      let inv = investment(principal, rate, years, interestPerYear);
+      alert(`
+        $${principal} invested at ${rate}% for ${years} years compounded ${interestPerYear} times per year is $${inv}.
+        `);
+    </script>
+  </body>
+</html>

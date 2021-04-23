@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex 11</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 11</div>
+    <a href="index.html">Back</a>
+    <script>
+      const legalDrivingAge = (age) => {
+        if (age < 18) {
+          return alert(` You are not old enough to legally drive.`);
+        } else {
+          alert(` You are old enough to legally drive.`);
+        }
+      };
+      let age = parseFloat(prompt("What is your age?", ""), 10);
+
+      let LDAge = legalDrivingAge(age);
+    </script>
+  </body>
+</html>

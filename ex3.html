@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX 3</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div>EX 3</div>
+    <a href="index.html">Back</a>
+    <script>
+      const squareFeet = (l, w) => {
+        if (typeof l === "number" && typeof w === "number") {
+          return l * w;
+        } else {
+          alert("wrong input");
+        }
+      };
+
+      const squareMeters = (feet) => feet * 0.09290304;
+
+      let length = parseFloat(
+        prompt("What is the length of the room in feet?", ""),
+        10
+      );
+      let width = parseFloat(
+        prompt("What is the width of the room in feet?", ""),
+        10
+      );
+      let squareF = squareFeet(length, width);
+      let squareM = squareMeters(squareF);
+      alert(`You entered dimensions of ${length} feet by ${width} feet.
+        \nThe area is\n ${squareF} square feet \n ${squareM} square meters.`);
+    </script>
+  </body>
+</html>
